@@ -1,6 +1,6 @@
 {
   "name": "@hseoy/version-webpack-plugin",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "webpack plugin to easily update the version specified in package.json",
   "main": "lib/plugin.js",
   "types": "lib/plugin.d.ts",

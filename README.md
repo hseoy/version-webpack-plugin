@@ -1,5 +1,7 @@
 # @hseoy/version-webpack-plugin
 
+> Under development
+
 webpack plugin to easily update the version specified in package.json
 
 ```
