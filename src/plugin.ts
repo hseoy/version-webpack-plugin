@@ -27,11 +27,15 @@ export default class VersionWebpackPlugin {
         cwd: this.options.rootPath,
         normalize: false,
       });
+      const currentVersion = packageJsonData.version ?? '0.0.0';
       const updatedVersion = await this.updateVersionThroughUserInput(
-        packageJsonData.version ?? '0.0.0',
+        currentVersion,
       );
       packageJsonData.version = updatedVersion;
       await this.writePackageJsonToFile(packageJsonData);
+
+      console.info(chalk.green('Previous Version: ', currentVersion));
+      console.info(chalk.green('Updated Version: ', updatedVersion));
     });
   }
 
@@ -72,7 +76,8 @@ export default class VersionWebpackPlugin {
     });
 
     if (!selectedUpdateOption) {
-      throw new Error('You did not select version update option');
+      console.info(chalk.yellow('You did not select version update option.\n'));
+      return currentVersion;
     }
 
     let updatedVersion = currentVersion;
