@@ -1,6 +1,6 @@
 {
   "name": "@hseoy/version-webpack-plugin",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "webpack plugin to easily update the version specified in package.json",
   "main": "lib/plugin.js",
   "types": "lib/plugin.d.ts",
@@ -25,7 +25,10 @@
     "plugin",
     "package.json"
   ],
-  "author": "Yunseo Hwang <yunseo.dev@gmail.com>",
+  "author": {
+    "name": "Yunseo Hwang",
+    "email": "yunseo.dev@gmail.com"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/hseoy/version-webpack-plugin/issues"
@@ -34,6 +37,7 @@
   "devDependencies": {
     "@types/jest": "^27.4.1",
     "@types/node": "^17.0.21",
+    "@types/semver": "^7.3.9",
     "@types/webpack": "^5.28.0",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.0.0",
@@ -52,5 +56,11 @@
   },
   "peerDependencies": {
     "webpack": ">=4.0.0"
+  },
+  "dependencies": {
+    "@hseoy/cli-select": "^1.0.0",
+    "chalk": "4.1.2",
+    "read-pkg": "^7.1.0",
+    "semver": "^7.3.5"
   }
 }

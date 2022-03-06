@@ -3,9 +3,17 @@ module.exports = {
   testEnvironment: 'node',
   testMatch: ['**/?(*.)+(spec|test).(ts|js)'],
   transform: {
-    '^.+\\.ts?$': 'ts-jest',
+    '^.+\\.[tj]s$': 'ts-jest',
   },
-  transformIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/dist/'],
-  coverageReporters: ['html', 'text'],
-  coverageDirectory: 'coverage',
+  transformIgnorePatterns: [
+    '<rootDir>/node_modules/(?!read-pkg)',
+    '<rootDir>/lib',
+  ],
+  globals: {
+    'ts-jest': {
+      tsconfig: {
+        allowJs: true,
+      },
+    },
+  },
 };
